@@ -8,3 +8,7 @@ Proxmox, no es solo una maquina virtual más, con una interfaz gráfica muy senc
 Al utilizar OpenVZ se puede cambiar tanto memoria RAM como espacio en disco asignados, en tiempo real y sin reiniciar el sistema. Otra cosa muy interesante son las plantillas, que consisten en un sistema operativo con algún software preinstalado, que se descargan directamente desde la interfaz de administración y crear una máquina virtual a partir de ellas.
 
 <img src="https://github.com/AgenciaImplementacion/Proxmox/blob/master/proxmox.png?raw=true" />
+
+## Lista de entradas para a configuración de Proxmox
+- Configuración de [Cluster](Cluster.md)
+
