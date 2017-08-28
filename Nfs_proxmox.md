@@ -33,11 +33,41 @@ En el cliente podemos instalar NFS de la siguiente manera (esto es realmente lo 
 ```
 apt-get install nfs-common
 ```
+
+## Añadir disco y crear particiones
+
+Una vez instalado el disco físicamente y arrancado el sistema, accedemos a la terminar vía SSH o terminal (línea de comandos). Necesitaremos identificar nuestro nuevo disco (con usuario root o permisos suficientes):
+
+```bash
+fdisk -l 
+Disk /dev/sdb: 931.5 GiB, 1000171331584 bytes, 1953459632 sectors
+``` 
+Vía: Añadir disco duro como unidad estándar al sistema
+Nuestro disco duro adicional es “/dev/sdb” de 1tera. Para añadirlo como disco útil:
+
+```bash
+fdisk /dev/sdd
+```
+```
+Opción n (añadir nueva partición)
+Si sólo vamos a crear una partición, se dejan los valores por defecto
+Opción t (cambiar tipo de partición)
+Seleccionamos 8e (tipo LVM)
+Opción w (grabar y salir)
+```
+
+El disco ya tiene partición definida. Ahora creamos el sistema de ficheros:
+
+```bash
+mkfs -t ext4 /dev/sdb
+```
+
 Ver qué unidad se le asignó al nuevo disco con
 
 ```bash
 fdisk -l
 ```
+
 
 En este caso se montó en `/dev/sdb`, allí se hace una partición con todo el tamaño del disco
 
