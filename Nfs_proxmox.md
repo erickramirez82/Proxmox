@@ -22,7 +22,7 @@ Extraído de: http://www.unixarena.com/2013/08/linux-lvm-volume-creation-operati
 
 En el servidor NFS ejecutamos:
 ```
-Apt-get install nfs-kernel-server nfs-common
+apt-get install nfs-kernel-server nfs-common
 ```
 
 A continuación, creamos los enlaces de inicio del sistema para el servidor NFS y lo iniciamos:
@@ -31,7 +31,7 @@ A continuación, creamos los enlaces de inicio del sistema para el servidor NFS 
 
 En el cliente podemos instalar NFS de la siguiente manera (esto es realmente lo mismo que en el servidor):
 ```
-Apt-get install nfs-common
+apt-get install nfs-common
 ```
 Ver qué unidad se le asignó al nuevo disco con
 
@@ -83,22 +83,22 @@ Agregar la siguiente línea al archivo `/etc/fstab`
 
 Ahora agregue todas las direcciones IP de proxmox al archivo de configuración NFS, editaré el archivo "exports" con vim:
 ```bash
-Vim / etc / exports
+vim / etc / exports
 ```
 
 Pegue la configuración a continuación:
 
 ```
-/Var/nfsbackup 192.168.1.114 (rw, sync, no_root_squash) 
-/var/nfsbackup 192.168.1.115 (rw, sync, no_root_squash) 
-/var/nfsbackup 192.168.1.116 (rw, sync, no_root_squash)
+/Var/nfsbackup 192.168.1.114(rw,sync,no_root_squash) 
+/var/nfsbackup 192.168.1.115(rw,sync,no_root_squash) 
+/var/nfsbackup 192.168.1.116(rw,sync,no_root_squash)
 ```
 
 Guarde el archivo y salga del editor.
 Para activar la nueva configuración, vuelva a exportar el directorio NFS y asegúrese de que el directorio compartido está activo:
 
 ```bash
-Exportfs -r 
+exportfs -r 
 exportfs -v
 ```
 Reiniciar(no necesario, solo por pruebas)
