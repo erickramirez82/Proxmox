@@ -13,3 +13,4 @@ Al utilizar OpenVZ se puede cambiar tanto memoria RAM como espacio en disco asig
 - Configuración de [Cluster](Cluster.md)
 - Eliminación configuración [Cluster](Eliminar_cluster.md)
 - Crear servicio (Disco compartido en red) [NFS](Nfs_proxmox.md)
+- Migrar en Proxmox [Maquinas](Migration.md)
